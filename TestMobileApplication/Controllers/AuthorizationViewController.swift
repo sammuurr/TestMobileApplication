@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 
-class AuthorizationViewController: UIViewController {
+class AuthorizationViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -18,16 +18,23 @@ class AuthorizationViewController: UIViewController {
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumber: UITextField!
-    @IBOutlet var birthDate: UITextField!
+    @IBOutlet var birthDate: UIDatePicker!
     @IBOutlet var polcyNumberTextField: UITextField!
+    @IBOutlet var MiddleName: UITextField!
     
+    let userDefoalts = UserDefaults()
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
     }
+    
+    
+    
     
     
     @IBAction func TextFieldEndMethod(_ sender: UITextField) {
@@ -41,7 +48,7 @@ class AuthorizationViewController: UIViewController {
         let alert = UIAlertController(title: "Upss, Error", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
 
-        if loginTextField.hasText, passwordTextField.hasText, repeatTextField.hasText, lastNameTextField.hasText, firstNameTextField.hasText, emailTextField.hasText, phoneNumber.hasText, birthDate.hasText, polcyNumberTextField.hasText{
+        if loginTextField.hasText, passwordTextField.hasText, repeatTextField.hasText, lastNameTextField.hasText, firstNameTextField.hasText, emailTextField.hasText, phoneNumber.hasText, polcyNumberTextField.hasText, MiddleName.hasText{
             
             
             let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
@@ -64,21 +71,24 @@ class AuthorizationViewController: UIViewController {
                     newValue.firstName = firstNameTextField.text
                     newValue.email = emailTextField.text
                     newValue.phoneNumber = phoneNumber.text
-                    newValue.birthDate = birthDate.text
+                    newValue.birthDate = birthDate.date
                     newValue.pollicyNumber = polcyNumberTextField.text
+                    newValue.middleName = MiddleName.text
+                    userDefoalts.set(passwordTextField!.text!, forKey: "password")
+                    userDefoalts.set(loginTextField!.text!, forKey: "login")
+                    
+                    newValue.pasportSeries = ""
+                    newValue.codeDevision_1 = "'"
+                    newValue.codeDevision_2 = ""
+                    newValue.lssuedByFrom = ""
+                    newValue.dateOfIssue = Date()
+                    
+                    globalProfil = newValue
+                    
+                    let vc = storyboard?.instantiateViewController(withIdentifier: "dopData")
+                    self.present(vc!, animated: true)
                     
                     
-                    if ((try? context.save()) != nil){
-                        
-                        globalProfil = newValue
-                        
-                        let vc = storyboard?.instantiateViewController(withIdentifier: "mainScreen")
-                        self.present(vc!, animated: true)
-                        
-                    }else{
-                        alert.message = "Something went wrong. We couldn't save you"
-                        self.present(alert, animated: true)
-                    }
                 }else{
                     alert.message = "Your passwords don't match"
                     self.present(alert, animated: true)
@@ -91,5 +101,9 @@ class AuthorizationViewController: UIViewController {
 
     }
 
-
+    @IBAction func removeKeyboard(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+    }
+    
 }

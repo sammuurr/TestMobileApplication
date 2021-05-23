@@ -2,7 +2,7 @@
 //  Entity+CoreDataClass.swift
 //  TestMobileApplication
 //
-//  Created by ADMIMN on 18.05.2021.
+//  Created by ADMIMN on 23.05.2021.
 //
 //
 

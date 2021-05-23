@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E5FEC11265420EB004E2BDA /* Entity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FEC0F265420EB004E2BDA /* Entity+CoreDataClass.swift */; };
-		8E5FEC12265420EB004E2BDA /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FEC10265420EB004E2BDA /* Entity+CoreDataProperties.swift */; };
+		8E52AC51265A370E00304503 /* Entity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52AC4F265A370E00304503 /* Entity+CoreDataClass.swift */; };
+		8E52AC52265A370E00304503 /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52AC50265A370E00304503 /* Entity+CoreDataProperties.swift */; };
 		8E5FEC1426542757004E2BDA /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FEC1326542757004E2BDA /* ProfilViewController.swift */; };
 		8E5FEC1626543A4F004E2BDA /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E5FEC1526543A4F004E2BDA /* data.json */; };
 		8E5FEC1826543DCA004E2BDA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FEC1726543DCA004E2BDA /* SettingViewController.swift */; };
@@ -23,11 +23,13 @@
 		8E6E507A2652EF4D00301946 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E50792652EF4C00301946 /* ServiceViewController.swift */; };
 		8E6E507C2652F03200301946 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E507B2652F03200301946 /* ServiceTableViewCell.swift */; };
 		8E6E507E2652F54A00301946 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E507D2652F54A00301946 /* ServiceModel.swift */; };
+		8E785567265975050087E2AD /* PasportDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E785566265975050087E2AD /* PasportDataViewController.swift */; };
+		8EF78B82265A452D004A0BE8 /* EditProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF78B81265A452D004A0BE8 /* EditProfilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E5FEC0F265420EB004E2BDA /* Entity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8E5FEC10265420EB004E2BDA /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E52AC4F265A370E00304503 /* Entity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8E52AC50265A370E00304503 /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E5FEC1326542757004E2BDA /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		8E5FEC1526543A4F004E2BDA /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		8E5FEC1726543DCA004E2BDA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		8E6E50792652EF4C00301946 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		8E6E507B2652F03200301946 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		8E6E507D2652F54A00301946 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		8E785566265975050087E2AD /* PasportDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasportDataViewController.swift; sourceTree = "<group>"; };
+		8EF78B81265A452D004A0BE8 /* EditProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +94,9 @@
 		8E6E50742652DE0100301946 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E52AC4F265A370E00304503 /* Entity+CoreDataClass.swift */,
+				8E52AC50265A370E00304503 /* Entity+CoreDataProperties.swift */,
 				8E5FEC1526543A4F004E2BDA /* data.json */,
-				8E5FEC0F265420EB004E2BDA /* Entity+CoreDataClass.swift */,
-				8E5FEC10265420EB004E2BDA /* Entity+CoreDataProperties.swift */,
 				8E6E50662652DD3E00301946 /* TestMobileApplication.xcdatamodeld */,
 				8E6E507D2652F54A00301946 /* ServiceModel.swift */,
 			);
@@ -114,9 +118,11 @@
 			children = (
 				8E6E50612652DD3E00301946 /* ViewController.swift */,
 				8E6E50772652E41D00301946 /* AuthorizationViewController.swift */,
+				8E785566265975050087E2AD /* PasportDataViewController.swift */,
 				8E6E50792652EF4C00301946 /* ServiceViewController.swift */,
 				8E5FEC1326542757004E2BDA /* ProfilViewController.swift */,
 				8E5FEC1726543DCA004E2BDA /* SettingViewController.swift */,
+				8EF78B81265A452D004A0BE8 /* EditProfilViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,16 +199,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5FEC1426542757004E2BDA /* ProfilViewController.swift in Sources */,
-				8E5FEC12265420EB004E2BDA /* Entity+CoreDataProperties.swift in Sources */,
 				8E6E50622652DD3E00301946 /* ViewController.swift in Sources */,
+				8E52AC51265A370E00304503 /* Entity+CoreDataClass.swift in Sources */,
 				8E6E505E2652DD3E00301946 /* AppDelegate.swift in Sources */,
 				8E6E507A2652EF4D00301946 /* ServiceViewController.swift in Sources */,
 				8E6E50682652DD3E00301946 /* TestMobileApplication.xcdatamodeld in Sources */,
 				8E6E50782652E41D00301946 /* AuthorizationViewController.swift in Sources */,
+				8E52AC52265A370E00304503 /* Entity+CoreDataProperties.swift in Sources */,
+				8E785567265975050087E2AD /* PasportDataViewController.swift in Sources */,
 				8E6E50602652DD3E00301946 /* SceneDelegate.swift in Sources */,
+				8EF78B82265A452D004A0BE8 /* EditProfilViewController.swift in Sources */,
 				8E6E507C2652F03200301946 /* ServiceTableViewCell.swift in Sources */,
 				8E6E507E2652F54A00301946 /* ServiceModel.swift in Sources */,
-				8E5FEC11265420EB004E2BDA /* Entity+CoreDataClass.swift in Sources */,
 				8E5FEC1826543DCA004E2BDA /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

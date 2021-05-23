@@ -15,17 +15,39 @@ class ProfilViewController: UIViewController {
     @IBOutlet var emailNumberLabel: UILabel!
     @IBOutlet var policyNumberLabel: UILabel!
     @IBOutlet var birthDayLAbel: UILabel!
+    @IBOutlet var yearLabel: UILabel!
+    
+    @IBOutlet var pasportSeriesLabel: UILabel!
+    @IBOutlet var codeDevisionLabel: UILabel!
+    @IBOutlet var IssuedByFromLabel: UILabel!
+    @IBOutlet var dateOfIssueLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fullNameLabel.text = "\(globalProfil!.lastName!) \(globalProfil!.firstName!)"
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let age = Calendar.current.dateComponents([.year], from: globalProfil!.birthDate!, to: Date()).year
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        
+        
+        fullNameLabel.text = "\(globalProfil!.firstName!) \(globalProfil!.lastName!) \(globalProfil!.middleName!)"
         telephoneNumberLabel.text = globalProfil!.phoneNumber
         emailNumberLabel.text = globalProfil!.email
         policyNumberLabel.text = globalProfil!.pollicyNumber
-        birthDayLAbel.text = globalProfil!.birthDate
+        birthDayLAbel.text = dateFormatter.string(from: globalProfil!.birthDate!)
+        yearLabel.text = "\(age!) years"
         
+        pasportSeriesLabel.text = globalProfil!.pasportSeries
+        codeDevisionLabel.text = "\(globalProfil!.codeDevision_1!)-\(globalProfil!.codeDevision_2!)"
+        IssuedByFromLabel.text = globalProfil!.lssuedByFrom
+        dateOfIssueLabel.text = dateFormatter.string(from: globalProfil!.dateOfIssue!)
     }
+
 
 }

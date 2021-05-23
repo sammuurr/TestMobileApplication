@@ -12,13 +12,17 @@ class ServiceViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backButton: UIButton!
     let serviceData = ServiceModel().getServiceData()
+    @IBOutlet var constraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        constraint.isActive = true
+        backButton.isHidden = false
         tableView.tableFooterView = UIView()
         
         if globalProfil != nil{
             backButton.isHidden = true
+            constraint.isActive = false
         }
         
     }
@@ -31,8 +35,8 @@ class ServiceViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceTableViewCell", for: indexPath) as! ServiceTableViewCell
         
-        cell.serviceTitle.text = serviceData[indexPath.row].title.replacingOccurrences(of: "\n", with: "")
-        cell.serviceDescription.text = serviceData[indexPath.row].description.replacingOccurrences(of: "\n", with: "")
+        cell.serviceTitle.text = serviceData[indexPath.row].title
+        cell.serviceDescription.text = serviceData[indexPath.row].description
         
         return cell
     }
